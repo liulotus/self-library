@@ -3,9 +3,7 @@ unit Unit1;
 interface
  
 uses
-  {w sekcji uses musimy zadelkarować dodatkowo te dwa moduły} 
   UrlMon, ActiveX;
- 
  
 type
  
@@ -20,9 +18,7 @@ type
     function GetBindInfo(out grfBINDF: DWORD; var bindinfo: TBindInfo): HResult; stdcall;
     function OnDataAvailable(grfBSCF: DWORD; dwSize: DWORD; formatetc: PFormatEtc; stgmed: PStgMedium): HResult; stdcall;
     function OnObjectAvailable(const iid: TGUID; punk: IUnknown): HResult; stdcall;
- 
-    {poniższe fukcje nie są opisane w interfejsie IBindStatusCallback w module UrlMon (plik UrlMon.pas)
-     ale są wymagane przez Delphi w opise każdego interfejsu, bez tego się nie skompliluje}
+
     function _AddRef: Integer; stdcall;
     function _Release: Integer; stdcall;
     function QueryInterface(const IID: TGUID; out Obj): HRESULT; stdcall;
@@ -70,7 +66,7 @@ end;
  
 function TStatusCallback.OnStopBinding(hresult: HResult; szError: LPCWSTR): HResult; stdcall;
 begin
-    Form1.Edit1.Text:='Zakonczono pobieranie';
+    Form1.Edit1.Text:='Hello World';
 result:=0;
 end;
  
