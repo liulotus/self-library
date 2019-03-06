@@ -8,9 +8,6 @@ uses
  
  
 type
- {w module UrlMon jest już zdefiniowany interfejs IBindStatusCallback, niestety nie możemy go użyć w takiej formie jakiej jest, musimy zdefiniować nowy interfejs
-  pokrywając tylko jego metody.
- Do rozwiązania potrzebna nam jest funkcja OnProgress, reszta może nic nie robić, ale muszą być zdefiniowane}
  
   TStatusCallback = class (TObject, IBindStatusCallback)
   public
