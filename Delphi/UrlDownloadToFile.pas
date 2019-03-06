@@ -112,7 +112,7 @@ procedure TForm1.Button1Click(Sender: TObject);
 var StatusCallback : TStatusCallback;
 begin
     StatusCallBack:=TStatusCallback.Create;  {tworzymy interfejs StatusCallback}
-    UrlDownloadToFile(nil, PChar('http://www.strona.pl/pobierany_plik.ext'), PChar('C:\pobierany_plik.ext'), 0, StatusCallBack); {wywołujemy pobieranie}
+    UrlDownloadToFile(nil, PChar('downfile-http-url'), PChar('target-path'), 0, StatusCallBack); {wywołujemy pobieranie}
     StatusCallBack.Free; {zwalniamy interfejs}
 end;
  
